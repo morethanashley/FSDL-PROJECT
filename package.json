@@ -1,0 +1,15 @@
+{
+  "name": "ev-sharing-platform",
+  "version": "1.0.0",
+  "description": "An EV ride-sharing platform for drivers going the same path",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "mongoose": "^7.6.3",
+    "dotenv": "^16.3.1"
+  }
+} 
