@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Create Account</h2>
+            <p>Join our ride-sharing community</p>
+        </div>
+        
+        <form id="registerForm" class="auth-form">
+            <div class="form-group">
+                <label for="registerName">Full Name</label>
+                <input type="text" id="registerName" name="name" required 
+                       placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="registerEmail">Email Address</label>
+                <input type="email" id="registerEmail" name="email" required 
+                       placeholder="Enter your email">
+            </div>
+            
+            <div class="form-group">
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" name="password" required 
+                       placeholder="Create a password">
+            </div>
+            
+            <div class="form-group">
+                <label for="registerRole">I want to</label>
+                <select id="registerRole" name="role" required>
+                    <option value="">Select your role</option>
+                    <option value="driver">Drive and offer rides</option>
+                    <option value="passenger">Find and join rides</option>
+                </select>
+            </div>
+            
+            <div class="form-actions">
+                <button type="submit" class="primary-button">Create Account</button>
+            </div>
+            
+            <div class="auth-footer">
+                <p>Already have an account? <a href="/login">Login here</a></p>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %} 

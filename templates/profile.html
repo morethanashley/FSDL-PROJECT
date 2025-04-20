@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>My Profile</h1>
+        <button onclick="logout()" class="logout-button">Logout</button>
+    </div>
+
+    <div class="profile-content">
+        <div class="profile-info">
+            <h2>Personal Information</h2>
+            <div class="info-card">
+                <p><strong>Name:</strong> <span id="userName">{{ current_user.name }}</span></p>
+                <p><strong>Email:</strong> <span id="userEmail">{{ current_user.email }}</span></p>
+                <p><strong>Role:</strong> <span id="userRole">{% if current_user.is_driver %}Driver{% else %}Passenger{% endif %}</span></p>
+            </div>
+        </div>
+
+        <div class="trip-history">
+            <h2>My Trips</h2>
+            <div class="tabs">
+                <button class="tab-button active" onclick="showTab('upcoming')">Upcoming</button>
+                <button class="tab-button" onclick="showTab('past')">Past</button>
+            </div>
+            <div id="upcoming-trips" class="tab-content active">
+                <div id="upcomingTripsList" class="trips-list">
+                    {% if upcoming_trips %}
+                        {% for trip in upcoming_trips %}
+                            <div class="trip-card">
+                                <div class="trip-header">
+                                    <h3>{{ trip.start_location_address }} → {{ trip.end_location_address }}</h3>
+                                    <span class="trip-status">{{ trip.status }}</span>
+                                </div>
+                                <div class="trip-details">
+                                    <p><strong>Driver:</strong> {{ trip.driver.name }}</p>
+                                    <p><strong>Departure:</strong> {{ trip.departure_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                                    <p><strong>Arrival:</strong> {{ trip.arrival_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                                    <p><strong>Available Seats:</strong> {{ trip.available_seats }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="no-trips">No upcoming trips</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div id="past-trips" class="tab-content">
+                <div id="pastTripsList" class="trips-list">
+                    {% if past_trips %}
+                        {% for trip in past_trips %}
+                            <div class="trip-card">
+                                <div class="trip-header">
+                                    <h3>{{ trip.start_location_address }} → {{ trip.end_location_address }}</h3>
+                                    <span class="trip-status">{{ trip.status }}</span>
+                                </div>
+                                <div class="trip-details">
+                                    <p><strong>Driver:</strong> {{ trip.driver.name }}</p>
+                                    <p><strong>Departure:</strong> {{ trip.departure_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                                    <p><strong>Arrival:</strong> {{ trip.arrival_time.strftime('%Y-%m-%d %H:%M') }}</p>
+                                    <p><strong>Available Seats:</strong> {{ trip.available_seats }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p class="no-trips">No past trips</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

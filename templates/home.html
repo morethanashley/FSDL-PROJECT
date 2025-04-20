@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to EV Sharing Platform</h1>
+        <p class="hero-subtitle">Share your journey, save battery, help the environment</p>
+        <div class="cta-buttons">
+            <a href="/register" class="cta-button primary">Get Started</a>
+            <a href="/login" class="cta-button secondary">Login</a>
+        </div>
+    </div>
+</section>
+
+<section class="benefits">
+    <h2>Why Choose EV Sharing?</h2>
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Eco-Friendly</h3>
+            <p>Reduce carbon emissions by sharing rides in electric vehicles</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-wallet"></i>
+            <h3>Cost-Effective</h3>
+            <p>Save money on transportation while earning as a driver</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-users"></i>
+            <h3>Community</h3>
+            <p>Connect with like-minded people who care about the environment</p>
+        </div>
+        <div class="benefit-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Convenient</h3>
+            <p>Easy-to-use platform for finding and sharing rides</p>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature-card driver">
+        <div class="feature-content">
+            <h3>For Drivers</h3>
+            <p>Share your EV journey and earn while helping others</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Set your own schedule</li>
+                <li><i class="fas fa-check"></i> Choose your passengers</li>
+                <li><i class="fas fa-check"></i> Earn rewards</li>
+                <li><i class="fas fa-check"></i> Track your earnings</li>
+            </ul>
+            <a href="/register?role=driver" class="feature-button">Become a Driver</a>
+        </div>
+    </div>
+    
+    <div class="feature-card passenger">
+        <div class="feature-content">
+            <h3>For Passengers</h3>
+            <p>Find convenient rides and save on transportation</p>
+            <ul>
+                <li><i class="fas fa-check"></i> Find rides easily</li>
+                <li><i class="fas fa-check"></i> Save money</li>
+                <li><i class="fas fa-check"></i> Reduce carbon footprint</li>
+                <li><i class="fas fa-check"></i> Safe and reliable</li>
+            </ul>
+            <a href="/register?role=passenger" class="feature-button">Join as Passenger</a>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Sign Up</h3>
+            <p>Create your account as a driver or passenger</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Find or Create</h3>
+            <p>Search for available trips or create your own</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Connect</h3>
+            <p>Connect with other users and coordinate your journey</p>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Share & Save</h3>
+            <p>Share your ride and save money while helping the environment</p>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"I've saved so much money on my daily commute while meeting great people!"</p>
+            </div>
+            <div class="testimonial-author">
+                <div>
+                    <h4>Sarah Johnson</h4>
+                    <p>Regular Passenger</p>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"As a driver, I love being able to help others while earning extra income."</p>
+            </div>
+            <div class="testimonial-author">
+                <div>
+                    <h4>Michael Chen</h4>
+                    <p>EV Driver</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to Start Your Journey?</h2>
+    <p>Join our community of eco-conscious travelers today</p>
+    <div class="cta-buttons">
+        <a href="/register" class="cta-button primary">Get Started Now</a>
+    </div>
+</section>
+{% endblock %} 
